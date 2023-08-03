@@ -1,13 +1,18 @@
 package com.phone.contactlist
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import com.phone.contactlist.databinding.ActivityAddContactBinding
+import com.phone.contactlist.model.ContactData
+import com.phone.contactlist.ui.MainActivity
+import com.phone.contactlist.viewModel.ContactsViewModel
 
 class AddContact : AppCompatActivity() {
     lateinit var binding:ActivityAddContactBinding
-
+    private val contactsViewModel:ContactsViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityAddContactBinding.inflate(layoutInflater)
@@ -16,9 +21,10 @@ class AddContact : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        setContentView(binding.root)
         binding.btnAddcontact.setOnClickListener {
             validateAdd()
-            clearError()
+//            clearError()
         }
     }
 
@@ -43,17 +49,21 @@ class AddContact : AppCompatActivity() {
         }
 
         if(!error){
-            Toast.makeText(this,"Contact added successfully", Toast.LENGTH_LONG)
-                .show()
+            val newContact=ContactData(0,name,email,phone,"")
+            contactsViewModel.saveContact(newContact)
+            Toast.makeText(this,"Contact added successfully", Toast.LENGTH_LONG).show()
+            finish()
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
         }
 
     }
 
-    fun clearError(){
-        binding.tilName.error = null
-        binding.tilPhone.error = null
-        binding.tilEmail.error = null
-    }
+//    fun clearError(){
+//        binding.tilName.error = null
+//        binding.tilPhone.error = null
+//        binding.tilEmail.error = null
+//    }
 }
 
 

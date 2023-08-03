@@ -1,13 +1,15 @@
-package com.phone.contactlist
+package com.phone.contactlist.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.phone.contactlist.databinding.ContactListItemBinding
+import com.phone.contactlist.model.ContactData
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
 
 class ContactAdapter(var contactList: List<ContactData>):RecyclerView.Adapter<ContactViewHolder>(){
+    lateinit var contactListItemBinding: ContactListItemBinding
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         val binding=
             ContactListItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
