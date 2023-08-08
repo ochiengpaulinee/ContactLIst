@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ContactList</string>
+    <string name="contact_added_successfully">Contact added successfully</string>
+    <string name="enter_email_adress">Enter email adress</string>
+    <string name="enter_phone_number">Enter Phone number</string>
+    <string name="enter_name">Enter name</string>
 </resources>

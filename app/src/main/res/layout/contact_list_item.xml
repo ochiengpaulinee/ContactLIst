@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/cvContact"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -10,55 +10,55 @@
     app:cardElevation="8dp">
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cvContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivDiana"
+            android:layout_width="167dp"
+            android:layout_height="172dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="53dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/diana" />
 
-    <ImageView
-        android:id="@+id/ivDiana"
-        android:layout_width="167dp"
-        android:layout_height="172dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="53dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/diana" />
+        <TextView
+            android:id="@+id/tvdisplayName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/ivDiana"
+            app:layout_constraintTop_toTopOf="@+id/ivDiana"
+            tools:text="Diana" />
 
-    <TextView
-        android:id="@+id/tvdisplayName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="150dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/ivDiana"
-        app:layout_constraintTop_toTopOf="@+id/ivDiana"
-        tools:text="Diana" />
+        <TextView
+            android:id="@+id/tvPhoneNumber"
+            android:layout_width="72dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.046"
+            app:layout_constraintStart_toEndOf="@+id/ivDiana"
+            app:layout_constraintTop_toTopOf="@+id/tvdisplayName"
+            tools:text="075432676" />
 
-    <TextView
-        android:id="@+id/tvPhoneNumber"
-        android:layout_width="72dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="150dp"
-        tools:text="075432676"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toEndOf="@+id/ivDiana"
-        app:layout_constraintTop_toTopOf="@+id/tvdisplayName" />
-
-    <TextView
-        android:id="@+id/tvEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="88dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber"
-        tools:text="diana@gmail.com" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="88dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber"
+            tools:text="diana@gmail.com" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

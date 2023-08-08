@@ -24,34 +24,33 @@ class AddContact : AppCompatActivity() {
         setContentView(binding.root)
         binding.btnAddcontact.setOnClickListener {
             validateAdd()
-//            clearError()
         }
     }
 
-    fun validateAdd(){
+    private fun validateAdd(){
         val name = binding.etName.text.toString()
         val phone = binding.etPhone.text.toString()
         val email = binding.etEmail.text.toString()
         var error = false
 
         if (name.isBlank()){
-            binding.tilName.error = "Enter name"
+            binding.tilName.error = getString(R.string.enter_name)
             error = true
         }
         if (phone.isBlank()){
-            binding.tilPhone.error = "Enter Phone number"
+            binding.tilPhone.error = getString(R.string.enter_phone_number)
             error = true
         }
 
         if (email.isBlank()){
-            binding.tilEmail.error = "Enter email adress"
+            binding.tilEmail.error = getString(R.string.enter_email_adress)
             error = true
         }
 
         if(!error){
             val newContact=ContactData(0,name,email,phone,"")
             contactsViewModel.saveContact(newContact)
-            Toast.makeText(this,"Contact added successfully", Toast.LENGTH_LONG).show()
+            Toast.makeText(this,getString(R.string.contact_added_successfully), Toast.LENGTH_LONG).show()
             finish()
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
