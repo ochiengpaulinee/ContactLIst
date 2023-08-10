@@ -19,4 +19,7 @@ class ContactsViewModel:ViewModel() {
     fun getContacts():LiveData<List<ContactData>>{
         return contactsRepo.getAllContacts()
     }
+    fun getContactsById(contactId:Int):LiveData<ContactData>{
+        return contactsRepo.getContactById(contactId)
+    }
 }

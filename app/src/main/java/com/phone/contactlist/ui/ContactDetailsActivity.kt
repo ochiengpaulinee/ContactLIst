@@ -22,10 +22,10 @@ class ContactDetailsActivity : AppCompatActivity() {
 
        }
         viewModel = ContactsViewModel()
-        val contactId = intent.getIntExtra("CONTACT_ID",0)
-        viewModel.getContacts(contactId).observe(this, Observer { contact ->
+        val contactsId = intent.getIntExtra("CONTACT_ID",0)
+        viewModel.getContactsById(contactsId).observe(this, Observer { contact ->
             if (contact != null){
-                display(contact)
+                displayContactDetail(contact)
             }
             else{
                 Toast.makeText(this,"contact not found",Toast.LENGTH_LONG).show()
